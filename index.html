@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="bg-body-secondary">
+    
+
+    <main class="w-75 mx-auto mt-5 ">
+        <section class="bg-info p-3">
+            <div class="inputs-form mb-2">
+                <label for="productName">productName:</label>
+                <input oninput="regexName()" type="text" class="form-control" id="productName" placeholder="product Name">
+                <p id="messageName" class="alert alert-danger d-none">Invalid Name : <br> -Name must start with uppercase letter . <br> -Name must be at least 3 chars . </p>
+            </div>
+
+            <div class="inputs-form mb-2">
+                <label for="productPrice">productPrice:</label>
+                <input oninput="regexPrice()" type="number" class="form-control" id="productPrice" placeholder="product Price">
+                <p id="messagePrice" class="alert alert-danger d-none">Invalid Price : <br> -Price must be bigger than 0 and less than 1,000,000 .</p>
+            </div>
+
+            <div class="inputs-form mb-2">
+                <label for="productCategory">productCategory:</label>
+                <input oninput="regexCategory()" type="text" class="form-control" id="productCategory" placeholder="product Category">
+                <p id="messageCategory" class="alert alert-danger d-none">Invalid Category : <br> -You must choose from (mobile , tv , laptop) .</p>
+
+            </div>
+
+            <div class="inputs-form mb-2">
+                <label for="productDescription">productDescription:</label>
+                <textarea oninput="regexDescription()" class="form-control" id="productDescription" placeholder="product Description"></textarea>
+                <p id="messageDescription" class="alert alert-danger d-none">Invalid Description : <br> -Description should be at least 3 chars and at most 100 chars .</p>
+            </div>
+
+            <button class="btn btn-primary w-100" onclick="addProduct()" id="addBtn">Add Product</button>
+            <button class="btn btn-primary w-100 d-none" id="updateBtn" onclick="updateProduct()">Update Product</button>
+
+        </section>
+
+
+        <input oninput="searchProduct()" id="searchInput" type="text" class="form-control w-75 mx-auto my-3" placeholder="Search...">
+
+        <section class="bg-danger mt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
